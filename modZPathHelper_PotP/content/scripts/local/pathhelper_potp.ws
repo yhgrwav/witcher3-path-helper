@@ -19,23 +19,23 @@ function PHP_CurrentRegion() : PotP_Preview_Region
 	return PotP_R_NA;
 }
 
-function PHP_InRegion( entry : CPotP_Entry, region : PotP_Preview_Region ) : bool
+function PHP_InRegion( pe : CPotP_Entry, region : PotP_Preview_Region ) : bool
 {
 	if ( region == PotP_R_VE )
-		return entry.region == PotP_R_VE || entry.region == PotP_R_NO;
-	return entry.region == region;
+		return pe.region == PotP_R_VE || pe.region == PotP_R_NO;
+	return pe.region == region;
 }
 
-function PHP_Kind( entry : CPotP_Entry ) : string
+function PHP_Kind( pe : CPotP_Entry ) : string
 {
-	if ( entry.category == PotP_A_Gwent )
+	if ( pe.category == PotP_A_Gwent )
 		return "gwent";
-	if ( entry.category == PotP_A_Event )
+	if ( pe.category == PotP_A_Event )
 		return "event";
-	if ( entry.category != PotP_A_Quest )
+	if ( pe.category != PotP_A_Quest )
 		return "";
 
-	switch( entry.filter )
+	switch( pe.filter )
 	{
 		case PotP_I_Mains:	return "main";
 		case PotP_I_Sides:	return "side";
@@ -46,11 +46,11 @@ function PHP_Kind( entry : CPotP_Entry ) : string
 	return "";
 }
 
-function PHP_Title( entry : CPotP_Entry ) : string
+function PHP_Title( pe : CPotP_Entry ) : string
 {
-	if ( entry.title != "" )
-		return entry.title;
-	return entry.entry_name;
+	if ( pe.title != "" )
+		return pe.title;
+	return pe.entry_name;
 }
 
 function PHP_GetCatalog() : CPotP_Catalog
