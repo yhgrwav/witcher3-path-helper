@@ -7,7 +7,7 @@ Konsolenbefehle, die dir helfen, in The Witcher 3 alles abzuschließen: Anschlag
 ## Installation
 
 1. Kopiere `modZPathHelper` nach `The Witcher 3\Mods`.
-2. Optional: Wenn du **Progress on the Path** nutzt, kopiere auch `modZPathHelper_PotP`. Ohne PotP bricht dieser Ordner die Skriptkompilierung.
+2. Optional: Wenn du **Progress on the Path** nutzt, kopiere auch `modProgressOnThePathNG` (merge). Ohne PotP bricht dieser Ordner die Skriptkompilierung.
 3. Aktiviere die Debug-Konsole.
 4. Update von Board Taker? Lösche den alten Ordner `modZBoardTaker`.
 

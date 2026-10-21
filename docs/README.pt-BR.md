@@ -7,7 +7,7 @@ Comandos de console que ajudam a concluir tudo em The Witcher 3: quadros de avis
 ## Instalação
 
 1. Copie `modZPathHelper` para `The Witcher 3\Mods`.
-2. Opcional: se você usa **Progress on the Path**, copie também `modZPathHelper_PotP`. Sem o PotP essa pasta quebra a compilação dos scripts.
+2. Opcional: se você usa **Progress on the Path**, copie também `modProgressOnThePathNG` (merge). Sem o PotP essa pasta quebra a compilação dos scripts.
 3. Ative o console de depuração.
 4. Atualizando do Board Taker? Apague a pasta antiga `modZBoardTaker`.
 

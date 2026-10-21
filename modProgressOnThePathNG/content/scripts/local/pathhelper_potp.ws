@@ -1,4 +1,4 @@
-// Path Helper - Progress on the Path add-on. Install ONLY together with Progress on the Path.
+// Path Helper - Progress on the Path add-on. Lives inside the PotP mod folder so it can see PotP classes.
 // pp()          - unfinished quests and Gwent cards in the current region according to PotP
 // pp( "type" )  - list them: "contract", "side", "main", "hunt", "scavenger", "event", "gwent"
 //                 pp( "contract", 1 ) for the next page

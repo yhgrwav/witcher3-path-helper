@@ -7,7 +7,7 @@ Comandos de consola que te ayudan a completarlo todo en The Witcher 3: tablones 
 ## Instalación
 
 1. Copia `modZPathHelper` en `The Witcher 3\Mods`.
-2. Opcional: si usas **Progress on the Path**, copia también `modZPathHelper_PotP`. Sin PotP esta carpeta rompe la compilación de scripts.
+2. Opcional: si usas **Progress on the Path**, copia también `modProgressOnThePathNG` (merge). Sin PotP esta carpeta rompe la compilación de scripts.
 3. Activa la consola de depuración.
 4. ¿Actualizas desde Board Taker? Borra la carpeta antigua `modZBoardTaker`.
 

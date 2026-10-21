@@ -7,7 +7,7 @@
 ## 安装
 
 1. 将 `modZPathHelper` 复制到 `The Witcher 3\Mods`。
-2. 可选：如果你使用 **Progress on the Path**，再复制 `modZPathHelper_PotP`。没有 PotP 时该文件夹会导致脚本编译失败。
+2. 可选：如果你使用 **Progress on the Path**，再复制 `modProgressOnThePathNG` (merge)。没有 PotP 时该文件夹会导致脚本编译失败。
 3. 开启调试控制台。
 4. 从 Board Taker 升级？请删除旧的 `modZBoardTaker` 文件夹。
 

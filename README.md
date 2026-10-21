@@ -7,7 +7,7 @@ Console commands that help you finish everything in The Witcher 3: notice boards
 ## Install
 
 1. Copy `modZPathHelper` into `The Witcher 3\Mods`.
-2. Optional: if you use **Progress on the Path**, also copy `modZPathHelper_PotP`. Without PotP this folder will break script compilation.
+2. Optional: if you use **Progress on the Path**, also copy `modProgressOnThePathNG` (merge). Without PotP this folder will break script compilation.
 3. Enable the debug console.
 4. Updating from Board Taker? Delete the old `modZBoardTaker` folder.
 

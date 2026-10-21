@@ -7,7 +7,7 @@ Konzolové příkazy, které pomáhají dokončit vše v Zaklínači 3: nástěn
 ## Instalace
 
 1. Zkopírujte `modZPathHelper` do `The Witcher 3\Mods`.
-2. Volitelně: pokud používáte **Progress on the Path**, zkopírujte i `modZPathHelper_PotP`. Bez PotP tato složka rozbije kompilaci skriptů.
+2. Volitelně: pokud používáte **Progress on the Path**, zkopírujte i `modProgressOnThePathNG` (merge). Bez PotP tato složka rozbije kompilaci skriptů.
 3. Zapněte ladicí konzoli.
 4. Aktualizujete z Board Taker? Smažte starou složku `modZBoardTaker`.
 

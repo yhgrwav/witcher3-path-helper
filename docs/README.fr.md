@@ -7,7 +7,7 @@ Commandes de console pour tout terminer dans The Witcher 3 : panneaux d'affichag
 ## Installation
 
 1. Copiez `modZPathHelper` dans `The Witcher 3\Mods`.
-2. Optionnel : si vous utilisez **Progress on the Path**, copiez aussi `modZPathHelper_PotP`. Sans PotP, ce dossier casse la compilation des scripts.
+2. Optionnel : si vous utilisez **Progress on the Path**, copiez aussi `modProgressOnThePathNG` (merge). Sans PotP, ce dossier casse la compilation des scripts.
 3. Activez la console de débogage.
 4. Mise à jour depuis Board Taker ? Supprimez l'ancien dossier `modZBoardTaker`.
 

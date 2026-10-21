@@ -7,7 +7,7 @@ Komendy konsoli, które pomagają ukończyć wszystko w Wiedźminie 3: tablice o
 ## Instalacja
 
 1. Skopiuj `modZPathHelper` do `The Witcher 3\Mods`.
-2. Opcjonalnie: jeśli używasz **Progress on the Path**, skopiuj też `modZPathHelper_PotP`. Bez PotP ten folder zepsuje kompilację skryptów.
+2. Opcjonalnie: jeśli używasz **Progress on the Path**, skopiuj też `modProgressOnThePathNG` (merge). Bez PotP ten folder zepsuje kompilację skryptów.
 3. Włącz konsolę debugowania.
 4. Aktualizujesz z Board Taker? Usuń stary folder `modZBoardTaker`.
 

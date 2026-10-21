@@ -7,7 +7,7 @@
 ## Установка
 
 1. Скопируйте `modZPathHelper` в `The Witcher 3\Mods`.
-2. По желанию: если стоит **Progress on the Path**, скопируйте ещё `modZPathHelper_PotP`. Без PotP эта папка сломает компиляцию скриптов.
+2. По желанию: если стоит **Progress on the Path**, скопируйте ещё `modProgressOnThePathNG` (merge). Без PotP эта папка сломает компиляцию скриптов.
 3. Включите отладочную консоль.
 4. Обновляетесь с Board Taker? Удалите старую папку `modZBoardTaker`.
 
