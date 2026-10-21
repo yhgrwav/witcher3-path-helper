@@ -1,4 +1,4 @@
-// Board Taker: take all notice board quests.
+// Path Helper - notice boards: take all notice board quests.
 // btake()      - take every quest from notice boards loaded around Geralt (whole area, ~2 km)
 // blist()      - notice boards in the current region, nearest first ("NEW" = has quests or never visited)
 // bgo( number ) - teleport to a board from blist(), then run btake()
@@ -275,7 +275,7 @@ timer function BT_TourTick( dt : float, id : int )
 	if ( bt_queue.Size() == 0 )
 	{
 		RemoveTimer( 'BT_TourTick' );
-		theGame.GetGuiManager().ShowNotification( "Auto tour done. Quests taken: " + bt_total );
+		theGame.GetGuiManager().ShowNotification( "Auto tour done. Quests taken: " + bt_total + "<br>With Progress on the Path add-on: pp() shows what is left here" );
 		return;
 	}
 

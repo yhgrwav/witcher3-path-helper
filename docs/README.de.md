@@ -1,38 +1,43 @@
-# Board Taker — The Witcher 3 (Next-Gen)
+# Path Helper — The Witcher 3 (next-gen)
 
-[English](../README.md) · **Deutsch**
+[English](../README.md) · [Русский](README.ru.md) · [Polski](README.pl.md) · [Українська](README.uk.md) · **Deutsch** · [Français](README.fr.md) · [Español](README.es.md) · [Português (BR)](README.pt-BR.md) · [Čeština](README.cs.md) · [简体中文](README.zh-CN.md)
 
-Konsolenbefehle, die alle Aufträge und Aushänge von den Anschlagtafeln für dich nehmen, inklusive einer vollautomatischen Tour über alle Tafeln der aktuellen Region. Praktisch, wenn alle Schnellreisepunkte freigeschaltet sind und du nicht mehr weißt, welche Tafeln du schon geprüft hast.
-
-Die Quests werden über den spieleigenen Tafel-Code angenommen und erscheinen im Tagebuch genauso, als hättest du den Zettel selbst abgerissen.
-
-## Voraussetzungen
-
-- The Witcher 3: Wild Hunt Next-Gen (4.0 oder neuer, nutzt Skript-Annotationen)
-- Aktivierte Debug-Konsole (`DBGConsoleOn=true` in `bin\config\base\general.ini` oder ein Konsolen-Mod)
+Konsolenbefehle, die dir helfen, in The Witcher 3 alles abzuschließen: Anschlagtafeln, Gwint-Karten und optional die Statistik von Progress on the Path.
 
 ## Installation
 
-Den Ordner `modZBoardTaker` nach `The Witcher 3\Mods` kopieren. Kein Mergen nötig, Originaldateien bleiben unverändert.
+1. Kopiere `modZPathHelper` nach `The Witcher 3\Mods`.
+2. Optional: Wenn du **Progress on the Path** nutzt, kopiere auch `modZPathHelper_PotP`. Ohne PotP bricht dieser Ordner die Skriptkompilierung.
+3. Aktiviere die Debug-Konsole.
+4. Update von Board Taker? Lösche den alten Ordner `modZBoardTaker`.
 
-## Befehle
+## Anschlagtafeln
 
 | Befehl | Funktion |
 |---|---|
-| `bauto()` | Automatische Tour: teleportiert zu jeder mit NEW markierten Tafel der Region (~4 s pro Tafel) und nimmt alle Quests |
-| `bauto(true)` | Ebenso, aber besucht alle Tafeln |
-| `bstop()` | Stoppt die Tour |
-| `btake()` | Nimmt Quests von allen geladenen Tafeln in der Nähe (~2 km) |
-| `blist()` | Tafeln der Region, nächste zuerst. `blist(1)` für die nächste Seite |
-| `bgo(N)` | Teleport zu Tafel N aus `blist()` |
-| `btour()` | Teleport zur nächsten Tafel, die noch Quests hat |
+| `btake()` | Alle Aufträge von Tafeln im Umkreis von 2 km annehmen |
+| `blist(page)` | Tafeln der Region auflisten |
+| `bgo(i)` | Zu Tafel `i` teleportieren |
+| `btour()` | Zur nächsten Tafel mit neuen Aushängen teleportieren |
+| `bauto()` / `bauto(true)` | Auto-Tour: teleportiert von Tafel zu Tafel und nimmt Aufträge (Pause im Kampf; `true` = alle Tafeln) |
+| `bstop()` | Auto-Tour stoppen |
 
-## Hinweise
+## Gwint
 
-- Funktioniert nur in der aktuellen Welt (Velen/Novigrad, Skellige, Toussaint usw. sind getrennte Welten). `bauto()` einmal pro Region ausführen.
-- Hat eine Tafel in 4 Sekunden nicht geladen, `bauto()` erneut starten — es besucht nur Tafeln mit verbliebenen Quests.
-- Eine Tafel kann NEW bleiben, wenn einige Aushänge durch die Story noch nicht freigeschaltet sind.
-- Im Kampf pausiert die Tour.
+| Befehl | Funktion |
+|---|---|
+| `glist(page)` | Fehlende Karten und wo man sie bekommt, aktuelle Region zuerst (`*` = Teleport möglich) |
+| `gnext()` | Teleport zum nächsten Spieler oder Händler mit einer fehlenden Karte. Gewinnen oder kaufen, dann wieder `gnext()` |
+| `gcheat()` | Cheat: fügt alle fehlenden Karten hinzu und schließt die Gwint-Nebenquests im Tagebuch ab (keine Turniere) |
+
+`gcheat()` ändert nur Inventar und Tagebuch. NPCs bieten eventuell weiter Partien an, und manche Story-Prüfungen zählen die Siege nicht. Vorher speichern.
+
+## Add-on für Progress on the Path
+
+| Befehl | Funktion |
+|---|---|
+| `pp()` | Was in der aktuellen Region übrig ist, nach Typ |
+| `pp("contract", page)` | Liste nach Typ: `main`, `side`, `contract`, `hunt`, `scavenger`, `event`, `gwent` |
 
 ## Lizenz
 

@@ -1,38 +1,43 @@
-# Board Taker — Zaklínač 3 (next-gen)
+# Path Helper — The Witcher 3 (next-gen)
 
-[English](../README.md) · **Čeština**
+[English](../README.md) · [Русский](README.ru.md) · [Polski](README.pl.md) · [Українська](README.uk.md) · [Deutsch](README.de.md) · [Français](README.fr.md) · [Español](README.es.md) · [Português (BR)](README.pt-BR.md) · **Čeština** · [简体中文](README.zh-CN.md)
 
-Příkazy konzole, které za vás vezmou všechny zakázky a oznámení z nástěnek, včetně plně automatické cesty po všech nástěnkách aktuálního regionu. Hodí se, když máte odemčené všechny body rychlého cestování a už nevíte, které nástěnky jste prošli.
-
-Úkoly se přijímají přes vlastní kód nástěnek hry, takže se v deníku objeví stejně, jako byste oznámení strhli sami.
-
-## Požadavky
-
-- Zaklínač 3: Divoký hon next-gen (4.0 nebo novější, používá anotace skriptů)
-- Zapnutá konzole (`DBGConsoleOn=true` v `bin\config\base\general.ini` nebo libovolný mod konzole)
+Konzolové příkazy, které pomáhají dokončit vše v Zaklínači 3: nástěnky, karty gwintu a volitelně statistiky Progress on the Path.
 
 ## Instalace
 
-Zkopírujte složku `modZBoardTaker` do `The Witcher 3\Mods`. Slučování není potřeba, původní soubory se nemění.
+1. Zkopírujte `modZPathHelper` do `The Witcher 3\Mods`.
+2. Volitelně: pokud používáte **Progress on the Path**, zkopírujte i `modZPathHelper_PotP`. Bez PotP tato složka rozbije kompilaci skriptů.
+3. Zapněte ladicí konzoli.
+4. Aktualizujete z Board Taker? Smažte starou složku `modZBoardTaker`.
 
-## Příkazy
+## Nástěnky
 
 | Příkaz | Co dělá |
 |---|---|
-| `bauto()` | Automatická cesta: teleport ke každé nástěnce označené NEW v regionu (~4 s na každou) a převzetí všech úkolů |
-| `bauto(true)` | Totéž, ale navštíví všechny nástěnky |
-| `bstop()` | Zastaví cestu |
-| `btake()` | Vezme úkoly ze všech načtených nástěnek v okolí (~2 km) |
-| `blist()` | Nástěnky v regionu, nejbližší první. `blist(1)` pro další stránku |
-| `bgo(N)` | Teleport k nástěnce N z `blist()` |
-| `btour()` | Teleport k nejbližší nástěnce, kde ještě jsou úkoly |
+| `btake()` | Vzít všechny úkoly z nástěnek v okruhu 2 km |
+| `blist(page)` | Seznam nástěnek v regionu |
+| `bgo(i)` | Teleport k nástěnce `i` |
+| `btour()` | Teleport k další nástěnce s novými oznámeními |
+| `bauto()` / `bauto(true)` | Automatická trasa: teleportuje od nástěnky k nástěnce a bere úkoly (pauza v boji; `true` = všechny) |
+| `bstop()` | Zastavit trasu |
 
-## Poznámky
+## Gwint
 
-- Funguje jen v aktuálním světě (Velen/Novigrad, Skellige, Toussaint atd. jsou samostatné světy). Spusťte `bauto()` jednou v každém regionu.
-- Pokud se nástěnka nenačetla do 4 sekund, spusťte `bauto()` znovu — navštíví jen nástěnky se zbývajícími úkoly.
-- Nástěnka může zůstat NEW, pokud některá oznámení ještě nebyla odemčena příběhem.
-- Během boje se cesta pozastaví.
+| Příkaz | Co dělá |
+|---|---|
+| `glist(page)` | Chybějící karty a kde je získat, nejdřív aktuální region (`*` = lze se teleportovat) |
+| `gnext()` | Teleport k nejbližšímu hráči nebo obchodníkovi s chybějící kartou. Vyhrajte ji nebo kupte, pak znovu `gnext()` |
+| `gcheat()` | Cheat: přidá všechny chybějící karty a dokončí vedlejší úkoly gwintu v deníku (turnaje ne) |
+
+`gcheat()` mění jen inventář a deník. NPC mohou dál nabízet hru a některé příběhové kontroly nemusí výhry započítat. Nejdřív uložte hru.
+
+## Doplněk pro Progress on the Path
+
+| Příkaz | Co dělá |
+|---|---|
+| `pp()` | Co zbývá v aktuálním regionu podle typu |
+| `pp("contract", page)` | Seznam podle typu: `main`, `side`, `contract`, `hunt`, `scavenger`, `event`, `gwent` |
 
 ## Licence
 

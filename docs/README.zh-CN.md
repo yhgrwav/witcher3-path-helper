@@ -1,38 +1,43 @@
-# Board Taker — 巫师3（次世代版）
+# Path Helper — The Witcher 3 (next-gen)
 
-[English](../README.md) · **简体中文**
+[English](../README.md) · [Русский](README.ru.md) · [Polski](README.pl.md) · [Українська](README.uk.md) · [Deutsch](README.de.md) · [Français](README.fr.md) · [Español](README.es.md) · [Português (BR)](README.pt-BR.md) · [Čeština](README.cs.md) · **简体中文**
 
-一组控制台命令，帮你拿下布告板上的所有委托和告示，包括自动遍历当前区域所有布告板。当你解锁了全部快速旅行点、已经记不清哪些布告板看过时会很方便。
-
-任务通过游戏自带的布告板代码接取，在日志中的表现与亲手揭下告示完全相同。
-
-## 需求
-
-- 巫师3：狂猎 次世代版（4.0 或更新，使用脚本注解）
-- 已开启调试控制台（在 `bin\config\base\general.ini` 中设置 `DBGConsoleOn=true`，或使用任意控制台模组）
+帮助你在《巫师 3》中完成一切的控制台命令：告示板、昆特牌，以及可选的 Progress on the Path 统计。
 
 ## 安装
 
-将 `modZBoardTaker` 文件夹复制到 `The Witcher 3\Mods`。无需合并，不修改原版文件。
+1. 将 `modZPathHelper` 复制到 `The Witcher 3\Mods`。
+2. 可选：如果你使用 **Progress on the Path**，再复制 `modZPathHelper_PotP`。没有 PotP 时该文件夹会导致脚本编译失败。
+3. 开启调试控制台。
+4. 从 Board Taker 升级？请删除旧的 `modZBoardTaker` 文件夹。
 
-## 命令
+## 告示板
 
 | 命令 | 作用 |
 |---|---|
-| `bauto()` | 自动遍历：依次传送到当前区域每个标记为 NEW 的布告板（每个约 4 秒）并接取所有任务 |
-| `bauto(true)` | 同上，但访问所有布告板 |
-| `bstop()` | 停止遍历 |
-| `btake()` | 接取周围（约 2 公里内）所有已加载布告板上的任务 |
-| `blist()` | 列出区域内的布告板，由近到远。`blist(1)` 查看下一页 |
-| `bgo(N)` | 传送到 `blist()` 中的第 N 个布告板 |
-| `btour()` | 传送到最近一个仍有任务的布告板 |
+| `btake()` | 接取 2 公里内所有告示板的任务 |
+| `blist(page)` | 列出本区域的告示板 |
+| `bgo(i)` | 传送到告示板 `i` |
+| `btour()` | 传送到下一个有新告示的告示板 |
+| `bauto()` / `bauto(true)` | 自动巡游：在告示板之间传送并接取任务（战斗中暂停；`true` = 全部告示板） |
+| `bstop()` | 停止自动巡游 |
 
-## 说明
+## 昆特牌
 
-- 只在当前世界生效（威伦/诺维格瑞、史凯利格、陶森特等是不同的世界）。请在每个区域各运行一次 `bauto()`。
-- 如果某个布告板 4 秒内未加载完成，再次运行 `bauto()`，它只会访问仍有任务的布告板。
-- 若部分告示尚未随剧情解锁，布告板可能保持 NEW 状态。
-- 战斗中遍历会暂停。
+| 命令 | 作用 |
+|---|---|
+| `glist(page)` | 缺少的卡牌及获取地点，当前区域优先（`*` = 可传送） |
+| `gnext()` | 传送到最近的持有缺失卡牌的玩家或商人。赢下或买下后再次执行 `gnext()` |
+| `gcheat()` | 作弊：添加所有缺失卡牌，并在日志中完成昆特牌支线任务（不含锦标赛） |
+
+`gcheat()` 只修改物品栏和日志。NPC 可能仍会邀请对局，部分剧情判定可能不计入胜利。请先存档。
+
+## Progress on the Path 扩展
+
+| 命令 | 作用 |
+|---|---|
+| `pp()` | 当前区域按类型列出剩余内容 |
+| `pp("contract", page)` | 按类型列出：`main`、`side`、`contract`、`hunt`、`scavenger`、`event`、`gwent` |
 
 ## 许可证
 

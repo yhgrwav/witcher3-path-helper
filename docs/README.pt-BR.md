@@ -1,38 +1,43 @@
-# Board Taker — The Witcher 3 (next-gen)
+# Path Helper — The Witcher 3 (next-gen)
 
-[English](../README.md) · **Português (BR)**
+[English](../README.md) · [Русский](README.ru.md) · [Polski](README.pl.md) · [Українська](README.uk.md) · [Deutsch](README.de.md) · [Français](README.fr.md) · [Español](README.es.md) · **Português (BR)** · [Čeština](README.cs.md) · [简体中文](README.zh-CN.md)
 
-Comandos de console que pegam para você todos os contratos e avisos dos quadros de avisos, incluindo um tour totalmente automático por todos os quadros da região atual. Útil quando você já desbloqueou todos os pontos de viagem rápida e não lembra mais quais quadros já conferiu.
-
-As missões são aceitas pelo próprio código dos quadros do jogo, então aparecem no diário como se você tivesse arrancado o aviso.
-
-## Requisitos
-
-- The Witcher 3: Wild Hunt next-gen (4.0 ou mais recente, usa anotações de script)
-- Console ativado (`DBGConsoleOn=true` em `bin\config\base\general.ini`, ou qualquer mod de console)
+Comandos de console que ajudam a concluir tudo em The Witcher 3: quadros de avisos, cartas de Gwent e, opcionalmente, as estatísticas do Progress on the Path.
 
 ## Instalação
 
-Copie a pasta `modZBoardTaker` para `The Witcher 3\Mods`. Não precisa de merge, os arquivos originais não são alterados.
+1. Copie `modZPathHelper` para `The Witcher 3\Mods`.
+2. Opcional: se você usa **Progress on the Path**, copie também `modZPathHelper_PotP`. Sem o PotP essa pasta quebra a compilação dos scripts.
+3. Ative o console de depuração.
+4. Atualizando do Board Taker? Apague a pasta antiga `modZBoardTaker`.
 
-## Comandos
+## Quadros de avisos
 
 | Comando | O que faz |
 |---|---|
-| `bauto()` | Tour automático: teleporta para cada quadro marcado como NEW na região (~4 s cada) e pega todas as missões |
-| `bauto(true)` | O mesmo, mas visita todos os quadros |
-| `bstop()` | Para o tour |
-| `btake()` | Pega as missões de todos os quadros carregados ao seu redor (~2 km) |
-| `blist()` | Quadros da região, os mais próximos primeiro. `blist(1)` para a próxima página |
-| `bgo(N)` | Teleporta para o quadro N de `blist()` |
-| `btour()` | Teleporta para o quadro mais próximo que ainda tem missões |
+| `btake()` | Pegar todas as missões dos quadros num raio de 2 km |
+| `blist(page)` | Listar os quadros da região |
+| `bgo(i)` | Teleportar para o quadro `i` |
+| `btour()` | Teleportar para o próximo quadro com avisos novos |
+| `bauto()` / `bauto(true)` | Rota automática: teleporta de quadro em quadro pegando missões (pausa em combate; `true` = todos) |
+| `bstop()` | Parar a rota |
 
-## Observações
+## Gwent
 
-- Funciona apenas no mundo atual (Velen/Novigrad, Skellige, Toussaint etc. são mundos separados). Rode `bauto()` uma vez em cada região.
-- Se um quadro não carregou em 4 segundos, rode `bauto()` de novo: ele só visita quadros com missões restantes.
-- Um quadro pode continuar NEW se alguns avisos ainda não foram liberados pela história.
-- O tour pausa durante combates.
+| Comando | O que faz |
+|---|---|
+| `glist(page)` | Cartas que faltam e onde obtê-las, região atual primeiro (`*` = teleporte disponível) |
+| `gnext()` | Teleporta para o jogador ou mercador mais próximo com uma carta que falta. Vença ou compre e use `gnext()` de novo |
+| `gcheat()` | Trapaça: adiciona todas as cartas que faltam e conclui as missões secundárias de Gwent no diário (não os torneios) |
+
+`gcheat()` muda só o inventário e o diário. NPCs ainda podem oferecer partidas e algumas verificações da história podem não contar as vitórias. Salve antes.
+
+## Complemento para o Progress on the Path
+
+| Comando | O que faz |
+|---|---|
+| `pp()` | O que falta na região atual, por tipo |
+| `pp("contract", page)` | Lista por tipo: `main`, `side`, `contract`, `hunt`, `scavenger`, `event`, `gwent` |
 
 ## Licença
 
