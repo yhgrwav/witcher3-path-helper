@@ -21,6 +21,7 @@ Comandos de consola que te ayudan a completarlo todo en The Witcher 3: tablones 
 | `btour()` | Teletransportarse al siguiente tablón con anuncios nuevos |
 | `bauto()` / `bauto(true)` | Ruta automática: teletransporta de tablón en tablón y toma misiones (pausa en combate; `true` = todos) |
 | `bstop()` | Detener la ruta |
+| `qreveal()` | Mostrar en el mapa todos los «?» ocultos de la región (siguen sin descubrir hasta que los visites) |
 
 ## Gwent
 

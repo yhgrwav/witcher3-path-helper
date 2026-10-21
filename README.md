@@ -21,6 +21,7 @@ Console commands that help you finish everything in The Witcher 3: notice boards
 | `btour()` | Teleport to the next board with new notices |
 | `bauto()` / `bauto(true)` | Auto tour: teleports from board to board and takes quests (pauses in combat; `true` = all boards) |
 | `bstop()` | Stop the auto tour |
+| `qreveal()` | Show every hidden "?" place in the region on the map (stays undiscovered until you visit it) |
 
 ## Gwent
 

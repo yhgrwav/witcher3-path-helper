@@ -21,6 +21,7 @@ Commandes de console pour tout terminer dans The Witcher 3 : panneaux d'affichag
 | `btour()` | Se téléporter au prochain panneau avec de nouvelles annonces |
 | `bauto()` / `bauto(true)` | Tournée auto : téléporte de panneau en panneau et prend les quêtes (pause en combat ; `true` = tous les panneaux) |
 | `bstop()` | Arrêter la tournée |
+| `qreveal()` | Afficher sur la carte tous les « ? » cachés de la région (non découverts tant que vous n’y allez pas) |
 
 ## Gwynt
 

@@ -21,6 +21,7 @@ Komendy konsoli, które pomagają ukończyć wszystko w Wiedźminie 3: tablice o
 | `btour()` | Teleport do następnej tablicy z nowymi ogłoszeniami |
 | `bauto()` / `bauto(true)` | Automatyczny objazd: teleport od tablicy do tablicy i branie zadań (pauza w walce; `true` = wszystkie tablice) |
 | `bstop()` | Zatrzymaj objazd |
+| `qreveal()` | Pokaż na mapie wszystkie ukryte „?” w regionie (pozostają nieodkryte, dopóki ich nie odwiedzisz) |
 
 ## Gwint
 

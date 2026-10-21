@@ -21,6 +21,7 @@ Konsolenbefehle, die dir helfen, in The Witcher 3 alles abzuschließen: Anschlag
 | `btour()` | Zur nächsten Tafel mit neuen Aushängen teleportieren |
 | `bauto()` / `bauto(true)` | Auto-Tour: teleportiert von Tafel zu Tafel und nimmt Aufträge (Pause im Kampf; `true` = alle Tafeln) |
 | `bstop()` | Auto-Tour stoppen |
+| `qreveal()` | Alle versteckten „?“ der Region auf der Karte zeigen (bleiben unentdeckt, bis du sie besuchst) |
 
 ## Gwint
 

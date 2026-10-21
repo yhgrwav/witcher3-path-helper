@@ -21,6 +21,7 @@ Comandos de console que ajudam a concluir tudo em The Witcher 3: quadros de avis
 | `btour()` | Teleportar para o próximo quadro com avisos novos |
 | `bauto()` / `bauto(true)` | Rota automática: teleporta de quadro em quadro pegando missões (pausa em combate; `true` = todos) |
 | `bstop()` | Parar a rota |
+| `qreveal()` | Mostrar no mapa todos os “?” ocultos da região (continuam não descobertos até você visitá-los) |
 
 ## Gwent
 

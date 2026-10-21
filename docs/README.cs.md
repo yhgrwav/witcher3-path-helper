@@ -21,6 +21,7 @@ Konzolové příkazy, které pomáhají dokončit vše v Zaklínači 3: nástěn
 | `btour()` | Teleport k další nástěnce s novými oznámeními |
 | `bauto()` / `bauto(true)` | Automatická trasa: teleportuje od nástěnky k nástěnce a bere úkoly (pauza v boji; `true` = všechny) |
 | `bstop()` | Zastavit trasu |
+| `qreveal()` | Zobrazit na mapě všechny skryté „?“ v regionu (zůstanou neobjevené, dokud je nenavštívíte) |
 
 ## Gwint
 
