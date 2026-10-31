@@ -42,6 +42,7 @@ Dla miejsc zepsutych przez mod: autoloot zabrał przedmiot, na który czeka zada
 | `qdone(r)` | Stań przy zepsutym miejscu: oznacza jako ukończone wszystko nieukończone w promieniu `r` metrów (domyślnie 50) |
 | `qpins(r)` | Znaczniki mapy w promieniu `r` metrów (domyślnie 30) i ich stan |
 | `questdone()` | Kończy zadanie poboczne śledzone w dzienniku (główne są pomijane) |
+| `qevent(r)` | Losowe zdarzenie jest już zaliczone, a niebieski „!” z Progress on the Path wciąż wisi: stań na nim, wpisz komendę i medytuj. Oznacza zdarzenia PotP w promieniu `r` metrów jako ukończone (domyślnie 10). Velen, Novigrad, Skellige, Kaer Morhen |
 | `qdoneall()` | Ile nieukończonych miejsc jest na tej mapie. `qdoneall("", 1)` oznacza WSZYSTKIE jako ukończone, czy są ukończone, czy nie. Najpierw zapisz grę |
 | `qreveal()` | Pokazuje na mapie wszystkie ukryte „?” regionu (pozostają nieodkryte, dopóki ich nie odwiedzisz) |
 

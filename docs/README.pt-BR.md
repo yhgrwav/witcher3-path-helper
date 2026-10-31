@@ -42,6 +42,7 @@ Para locais que um mod quebrou: o autoloot pegou o item que uma missão espera, 
 | `qdone(r)` | Fique em um local quebrado: marca como concluído tudo o que falta num raio de `r` metros (padrão 50) |
 | `qpins(r)` | Marcadores do mapa num raio de `r` metros (padrão 30) e seu estado |
 | `questdone()` | Concluir a missão secundária acompanhada no diário (missões principais são recusadas) |
+| `qevent(r)` | Um evento aleatório já feito ainda mostra o "!" azul do Progress on the Path: fique sobre ele, rode o comando e medite. Marca como concluídos os eventos do PotP num raio de `r` metros (padrão 10). Velen, Novigrad, Skellige, Kaer Morhen |
 | `qdoneall()` | Contar os locais não concluídos deste mapa. `qdoneall("", 1)` marca TODOS como concluídos, estejam ou não. Salve antes |
 | `qreveal()` | Mostrar no mapa todos os locais "?" ocultos da região (continuam não descobertos até você visitá-los) |
 

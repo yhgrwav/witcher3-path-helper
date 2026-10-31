@@ -42,6 +42,7 @@ Para lugares que rompió un mod: el autoloot tomó el objeto que espera una misi
 | `qdone(r)` | Ponte en un lugar roto: marca como completado todo lo pendiente en un radio de `r` metros (50 por defecto) |
 | `qpins(r)` | Marcadores del mapa en un radio de `r` metros (30 por defecto) y su estado |
 | `questdone()` | Completar la misión secundaria seguida en el diario (las principales se rechazan) |
+| `qevent(r)` | Un evento aleatorio ya hecho sigue mostrando el «!» azul de Progress on the Path: ponte encima, ejecuta el comando y medita. Marca como completados los eventos de PotP en un radio de `r` metros (10 por defecto). Velen, Novigrado, Skellige, Kaer Morhen |
 | `qdoneall()` | Contar los lugares pendientes de este mapa. `qdoneall("", 1)` marca TODOS como completados, lo estén o no. Guarda antes |
 | `qreveal()` | Mostrar en el mapa todos los lugares «?» ocultos de la región (siguen sin descubrir hasta que los visites) |
 

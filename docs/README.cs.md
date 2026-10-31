@@ -42,6 +42,7 @@ Pro místa, která rozbil mod: autoloot sebral předmět, na který úkol čeká
 | `qdone(r)` | Postavte se k rozbitému místu: označí jako hotové vše nedokončené v okruhu `r` metrů (výchozí 50) |
 | `qpins(r)` | Značky mapy v okruhu `r` metrů (výchozí 30) a jejich stav |
 | `questdone()` | Dokončit vedlejší úkol sledovaný v deníku (hlavní úkoly odmítne) |
+| `qevent(r)` | Náhodná událost je hotová, ale modrý „!“ z Progress on the Path pořád visí: postavte se na něj, zadejte příkaz a meditujte. Označí události PotP v okruhu `r` metrů jako hotové (výchozí 10). Velen, Novigrad, Skellige, Kaer Morhen |
 | `qdoneall()` | Spočítat nedokončená místa na této mapě. `qdoneall("", 1)` označí jako hotová VŠECHNA, ať jsou hotová, nebo ne. Nejdřív uložte hru |
 | `qreveal()` | Ukázat na mapě všechna skrytá místa „?“ v regionu (zůstanou neobjevená, dokud je nenavštívíte) |
 

@@ -42,6 +42,7 @@ Für Orte, die ein Mod kaputt gemacht hat: Autoloot hat den Gegenstand genommen,
 | `qdone(r)` | An einem kaputten Ort stehen: alles Unerledigte im Umkreis von `r` Metern als erledigt markieren (Standard 50) |
 | `qpins(r)` | Kartenmarkierungen im Umkreis von `r` Metern (Standard 30) und ihr Zustand |
 | `questdone()` | Die im Tagebuch verfolgte Nebenquest abschließen (Hauptquests werden abgelehnt) |
+| `qevent(r)` | Ein Zufallsereignis ist erledigt, aber das blaue „!“ von Progress on the Path bleibt: drauf stellen, Befehl ausführen, meditieren. Markiert PotP-Ereignisse im Umkreis von `r` Metern als erledigt (Standard 10). Velen, Novigrad, Skellige, Kaer Morhen |
 | `qdoneall()` | Unerledigte Orte auf dieser Karte zählen. `qdoneall("", 1)` markiert ALLE als erledigt, egal ob erledigt oder nicht. Vorher speichern |
 | `qreveal()` | Alle versteckten „?“-Orte der Region auf der Karte zeigen (bleiben unentdeckt, bis du sie besuchst) |
 

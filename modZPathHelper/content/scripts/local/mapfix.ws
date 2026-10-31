@@ -7,6 +7,7 @@
 // qfix()      - on the loaded map: open every "?" the game already counts as done (greyed out, never discovered)
 // qdoneall()  - how many unfinished places are on the loaded map; qdoneall( "", 1 ) clears ALL of them, done or not
 // questdone() - finish the quest tracked in the journal (not main quests)
+// qevent( r ) - mark Progress on the Path random events ("!") within r metres (default 10) as done
 // With the -debugscripts launch option every message is also written to Documents\The Witcher 3\scriptslog.txt
 
 // The notification can expire unseen while the console is open, the log keeps it
@@ -225,4 +226,116 @@ exec function qfix()
 		fixed += 1;
 	}
 	PHP_Say( "Bugged \"?\" fixed on this map: " + fixed + "<br>(done places that still showed as \"?\")" );
+}
+
+// Random events ("!" on the map) are Progress on the Path's own pins. PotP counts an event as done when the fact named after it
+// exists, a fact only PotP reads, so the game's own quests are not touched.
+struct PHP_Event
+{
+	var world : string;
+	var fact : string;
+	var pos : Vector;
+}
+
+function PHP_AddEvent( out events : array< PHP_Event >, world : string, fact : string, x : float, y : float )
+{
+	var e : PHP_Event;
+
+	e.world = world;
+	e.fact = fact;
+	e.pos = Vector( x, y );
+	events.PushBack( e );
+}
+
+// Copied from PotP's EventDefinitions.ws
+function PHP_Events() : array< PHP_Event >
+{
+	var events : array< PHP_Event >;
+
+	PHP_AddEvent( events, "novigrad", "PotP_Event_AtTheMercyOfStrangers_1_NG", 641.454102, 533.142456 );
+	PHP_AddEvent( events, "novigrad", "PotP_Event_CaravanAttack_NG_1", 1311.539551, 404.800537 );
+	PHP_AddEvent( events, "novigrad", "PotP_Event_CaravanAttack_NG_2", 207.837814, 75.866135 );
+	PHP_AddEvent( events, "novigrad", "PotP_Event_DeadlyCrossing_3_NG", -29.826519, -101.255219 );
+	PHP_AddEvent( events, "novigrad", "PotP_Event_DeadlyCrossing_1_NG", 794.722107, 266.272644 );
+	PHP_AddEvent( events, "novigrad", "PotP_Event_DeadlyCrossing_2_NG", 1087.826294, -295.390381 );
+	PHP_AddEvent( events, "novigrad", "PotP_Event_FaceMeIfYouDare_1_NG", 213.855240, -32.358776 );
+	PHP_AddEvent( events, "novigrad", "PotP_Event_HarassingATroll_NG", 138.532272, 811.463623 );
+	PHP_AddEvent( events, "novigrad", "PotP_Event_HighwayRobbery_NG", 300.595459, -135.326324 );
+	PHP_AddEvent( events, "novigrad", "PotP_Event_HighwaymansCache_NG", 519.180176, -212.923065 );
+	PHP_AddEvent( events, "novigrad", "PotP_Event_LootersHeatherton_NG", 151.509430, 508.062775 );
+	PHP_AddEvent( events, "novigrad", "PotP_Event_LootersCodgersQuarry_NG", 1221.132690, 831.181274 );
+	PHP_AddEvent( events, "novigrad", "PotP_Event_LootersToderas_NG", 1720.736694, 67.942719 );
+	PHP_AddEvent( events, "novigrad", "PotP_Event_MansBestFriend_NG", 643.049805, 799.665344 );
+	PHP_AddEvent( events, "novigrad", "PotP_Event_AWarmWelcome_NG", 1347.046143, 1591.817261 );
+	PHP_AddEvent( events, "novigrad", "PotP_Event_AtTheMercyOfStrangers_2_NG", 393.423737, 1265.788696 );
+	PHP_AddEvent( events, "novigrad", "PotP_Event_DrunkenRabble_NG", 543.444885, 1839.808228 );
+	PHP_AddEvent( events, "novigrad", "PotP_Event_FaceMeIfYouDare_2_NG", 899.003479, 1732.530640 );
+	PHP_AddEvent( events, "novigrad", "PotP_Event_FaceMeIfYouDare_3_NG", 505.266266, 1915.563843 );
+	PHP_AddEvent( events, "novigrad", "PotP_Event_KarmicJustice_NG", 862.002502, 1831.773438 );
+	PHP_AddEvent( events, "novigrad", "PotP_Event_NeverTrustChildren_NG", 765.527771, 1932.638062 );
+	PHP_AddEvent( events, "novigrad", "PotP_Event_RacistsOfNovigradFC_NG", 858.879944, 1819.517700 );
+	PHP_AddEvent( events, "novigrad", "PotP_Event_RacistsOfNovigradHS_NG", 553.651428, 1677.662231 );
+	PHP_AddEvent( events, "novigrad", "PotP_Event_StrangersInTheNight_NG", 1370.983887, 1507.835815 );
+	PHP_AddEvent( events, "novigrad", "PotP_Event_StrumpetInDistress_NG", 411.762390, 1672.084839 );
+	PHP_AddEvent( events, "novigrad", "PotP_Event_SuspiciousShakedown_NG", 739.579529, 1761.638062 );
+	PHP_AddEvent( events, "novigrad", "PotP_Event_TheFlameOfHatred_NG_1", 714.057678, 1861.176392 );
+	PHP_AddEvent( events, "novigrad", "PotP_Event_TheFlameOfHatred_NG_2", 793.164673, 1868.151978 );
+	PHP_AddEvent( events, "novigrad", "PotP_Event_TheMostTruestOfBasilisks_NG", 1911.729736, 1141.309082 );
+	PHP_AddEvent( events, "novigrad", "PotP_Event_ThePriceOfPassage_NG_1", 1678.246338, 1037.727295 );
+	PHP_AddEvent( events, "novigrad", "PotP_Event_ThePriceOfPassage_NG_2", 1766.244873, 1038.741089 );
+	PHP_AddEvent( events, "novigrad", "PotP_Event_ThePriceOfPassage_NG_3", 1932.989990, 1070.466309 );
+	PHP_AddEvent( events, "novigrad", "PotP_Event_WitchHunterRaids_NG", 580.663086, 1569.924316 );
+	PHP_AddEvent( events, "skellige", "PotP_Event_CallOfTheWild_NG", -526.447571, -340.631042 );
+	PHP_AddEvent( events, "skellige", "PotP_Event_FartingTrolls_NG", -283.890625, -769.414673 );
+	PHP_AddEvent( events, "skellige", "PotP_Event_SirensCall_NG", -409.181061, -202.543701 );
+	PHP_AddEvent( events, "skellige", "PotP_Event_SweetBait_NG", -443.542175, -307.774261 );
+	PHP_AddEvent( events, "skellige", "PotP_Event_TheFourFacesOfHemdall_NG", 2011.217651, -1851.521729 );
+	PHP_AddEvent( events, "skellige", "PotP_Event_WoeIsMe_NG", 552.972961, -411.028778 );
+	PHP_AddEvent( events, "skellige", "PotP_Event_YustiannaDisturbed_NG", 677.762207, 635.591064 );
+	PHP_AddEvent( events, "kaer_morhen", "PotP_Event_TrailOfEchoes_NG", -327.778656, 175.190674 );
+	return events;
+}
+
+// qevent( r ) - an event you already went through still shows "!": stand at it and run this, then meditate
+exec function qevent( optional radius : float )
+{
+	var events : array< PHP_Event >;
+	var playerPos : Vector;
+	var path, text : string;
+	var i, closed, nearest, dist : int;
+
+	// two Novigrad events are 12 m apart
+	if ( radius <= 0 )
+		radius = 10;
+
+	events = PHP_Events();
+	playerPos = thePlayer.GetWorldPosition();
+	path = theGame.GetWorld().GetDepotPath();
+	nearest = -1;
+	for ( i = 0; i < events.Size(); i += 1 )
+	{
+		if ( StrFindFirst( path, events[i].world ) < 0 || FactsQuerySum( events[i].fact ) > 0 )
+			continue;
+		dist = FloorF( VecDistance2D( playerPos, events[i].pos ) );
+		if ( dist > radius )
+		{
+			if ( nearest < 0 || dist < nearest )
+				nearest = dist;
+			continue;
+		}
+		FactsAdd( events[i].fact, 1, -1 );
+		LogChannel( 'PathHelper', "event done " + events[i].fact );
+		text += StrReplace( events[i].fact, "PotP_Event_", "" ) + "<br>";
+		closed += 1;
+	}
+
+	if ( closed == 0 )
+	{
+		if ( nearest < 0 )
+			PHP_Say( "No open random event within " + FloorF( radius ) + " m" );
+		else
+			PHP_Say( "No open random event within " + FloorF( radius ) + " m. Nearest one: " + nearest + " m" );
+		return;
+	}
+	PHP_Say( "Random events marked done: " + closed + "<br>" + text + "Meditate (or press the PotP update key) to remove the \"!\"" );
 }

@@ -42,6 +42,7 @@ Pour les lieux cassés par un mod : l'autoloot a pris l'objet qu'une quête atte
 | `qdone(r)` | Placez-vous à un lieu cassé : marque comme terminé tout ce qui ne l'est pas dans un rayon de `r` mètres (50 par défaut) |
 | `qpins(r)` | Marqueurs de la carte dans un rayon de `r` mètres (30 par défaut) et leur état |
 | `questdone()` | Terminer la quête secondaire suivie dans le journal (les quêtes principales sont refusées) |
+| `qevent(r)` | Un événement aléatoire déjà fait affiche encore le « ! » bleu de Progress on the Path : placez-vous dessus, lancez la commande, puis méditez. Marque comme terminés les événements PotP dans un rayon de `r` mètres (10 par défaut). Velen, Novigrad, Skellige, Kaer Morhen |
 | `qdoneall()` | Compter les lieux non terminés de cette carte. `qdoneall("", 1)` les marque TOUS comme terminés, qu'ils le soient ou non. Sauvegardez avant |
 | `qreveal()` | Afficher sur la carte tous les lieux « ? » cachés de la région (non découverts tant que vous n'y allez pas) |
 

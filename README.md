@@ -42,6 +42,7 @@ For places a mod broke: autoloot took the item a quest waits for, a wall can no 
 | `qdone(r)` | Stand at a broken place: mark every unfinished place within `r` metres as done (default 50) |
 | `qpins(r)` | Map pins within `r` metres (default 30) and their state |
 | `questdone()` | Complete the side quest tracked in the journal (main quests are refused) |
+| `qevent(r)` | A random event you already went through still shows a blue "!" from Progress on the Path: stand at it and run this, then meditate. Marks PotP events within `r` metres as done (default 10). Velen, Novigrad, Skellige, Kaer Morhen |
 | `qdoneall()` | Count unfinished places on this map. `qdoneall("", 1)` marks ALL of them as done, finished or not. Make a save first |
 | `qreveal()` | Show every hidden "?" place in the region on the map (stays undiscovered until you visit it) |
 
