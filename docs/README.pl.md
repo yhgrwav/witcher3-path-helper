@@ -2,12 +2,12 @@
 
 [English](../README.md) · [Русский](README.ru.md) · **Polski** · [Українська](README.uk.md) · [Deutsch](README.de.md) · [Français](README.fr.md) · [Español](README.es.md) · [Português (BR)](README.pt-BR.md) · [Čeština](README.cs.md) · [简体中文](README.zh-CN.md)
 
-Komendy konsoli, które pomagają ukończyć wszystko w Wiedźminie 3: tablice ogłoszeń, karty gwinta i opcjonalnie statystyki Progress on the Path.
+Komendy konsoli, które pomagają ukończyć wszystko w Wiedźminie 3: tablice ogłoszeń, karty gwinta oraz „?” i zadania zepsute przez mody (liczą się też w Progress on the Path).
 
 ## Instalacja
 
 1. Skopiuj `modZPathHelper` do `The Witcher 3\Mods`.
-2. Opcjonalnie: jeśli używasz **Progress on the Path**, skopiuj też `modProgressOnThePathNG` (merge). Bez PotP ten folder zepsuje kompilację skryptów.
+2. Aktualizujesz ze starszej wersji? Usuń `modProgressOnThePathNG\content\scripts\local\pathhelper_potp.ws`, jeśli go kopiowałeś.
 3. Włącz konsolę debugowania.
 4. Aktualizujesz z Board Taker? Usuń stary folder `modZBoardTaker`.
 
@@ -21,7 +21,6 @@ Komendy konsoli, które pomagają ukończyć wszystko w Wiedźminie 3: tablice o
 | `btour()` | Teleport do następnej tablicy z nowymi ogłoszeniami |
 | `bauto()` / `bauto(true)` | Automatyczny objazd: teleport od tablicy do tablicy i branie zadań (pauza w walce; `true` = wszystkie tablice) |
 | `bstop()` | Zatrzymaj objazd |
-| `qreveal()` | Pokaż na mapie wszystkie ukryte „?” w regionie (pozostają nieodkryte, dopóki ich nie odwiedzisz) |
 
 ## Gwint
 
@@ -33,12 +32,18 @@ Komendy konsoli, które pomagają ukończyć wszystko w Wiedźminie 3: tablice o
 
 `gcheat()` zmienia tylko ekwipunek i dziennik. NPC mogą nadal proponować grę, a niektóre sprawdzenia fabularne mogą nie zaliczyć wygranych. Najpierw zapisz grę.
 
-## Dodatek do Progress on the Path
+## Mapa: „?” i zepsute zadania
+
+Dla miejsc zepsutych przez mod: autoloot zabrał przedmiot, na który czeka zadanie, ściany nie da się już zniszczyć, „?” nie znika. Miejsce liczy się jako ukończone w grze i w Progress on the Path, gdy jego znacznik jest odkryty i wyszarzony; te komendy ustawiają właśnie ten stan. Działają na mapie, na której jesteś (Velen i Novigrad to jedna mapa).
 
 | Komenda | Działanie |
 |---|---|
-| `pp()` | Co zostało w bieżącym regionie, według typu |
-| `pp("contract", page)` | Lista według typu: `main`, `side`, `contract`, `hunt`, `scavenger`, `event`, `gwent` |
+| `qfix()` | Naprawia zbugowane „?” na całej mapie: miejsca, które gra już uznaje za ukończone, ale pokazuje jako „?”. Nieukończonych nie rusza |
+| `qdone(r)` | Stań przy zepsutym miejscu: oznacza jako ukończone wszystko nieukończone w promieniu `r` metrów (domyślnie 50) |
+| `qpins(r)` | Znaczniki mapy w promieniu `r` metrów (domyślnie 30) i ich stan |
+| `questdone()` | Kończy zadanie poboczne śledzone w dzienniku (główne są pomijane) |
+| `qdoneall()` | Ile nieukończonych miejsc jest na tej mapie. `qdoneall("", 1)` oznacza WSZYSTKIE jako ukończone, czy są ukończone, czy nie. Najpierw zapisz grę |
+| `qreveal()` | Pokazuje na mapie wszystkie ukryte „?” regionu (pozostają nieodkryte, dopóki ich nie odwiedzisz) |
 
 ## Licencja
 

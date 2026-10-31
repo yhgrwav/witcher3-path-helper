@@ -2,12 +2,12 @@
 
 [English](../README.md) · [Русский](README.ru.md) · [Polski](README.pl.md) · [Українська](README.uk.md) · [Deutsch](README.de.md) · [Français](README.fr.md) · [Español](README.es.md) · **Português (BR)** · [Čeština](README.cs.md) · [简体中文](README.zh-CN.md)
 
-Comandos de console que ajudam a concluir tudo em The Witcher 3: quadros de avisos, cartas de Gwent e, opcionalmente, as estatísticas do Progress on the Path.
+Comandos de console que ajudam a concluir tudo em The Witcher 3: quadros de avisos, cartas de Gwent e locais "?" ou missões que um mod quebrou (contam também no Progress on the Path).
 
 ## Instalação
 
 1. Copie `modZPathHelper` para `The Witcher 3\Mods`.
-2. Opcional: se você usa **Progress on the Path**, copie também `modProgressOnThePathNG` (merge). Sem o PotP essa pasta quebra a compilação dos scripts.
+2. Atualizando de uma versão antiga? Apague `modProgressOnThePathNG\content\scripts\local\pathhelper_potp.ws` se você o copiou.
 3. Ative o console de depuração.
 4. Atualizando do Board Taker? Apague a pasta antiga `modZBoardTaker`.
 
@@ -21,7 +21,6 @@ Comandos de console que ajudam a concluir tudo em The Witcher 3: quadros de avis
 | `btour()` | Teleportar para o próximo quadro com avisos novos |
 | `bauto()` / `bauto(true)` | Rota automática: teleporta de quadro em quadro pegando missões (pausa em combate; `true` = todos) |
 | `bstop()` | Parar a rota |
-| `qreveal()` | Mostrar no mapa todos os “?” ocultos da região (continuam não descobertos até você visitá-los) |
 
 ## Gwent
 
@@ -33,12 +32,18 @@ Comandos de console que ajudam a concluir tudo em The Witcher 3: quadros de avis
 
 `gcheat()` muda só o inventário e o diário. NPCs ainda podem oferecer partidas e algumas verificações da história podem não contar as vitórias. Salve antes.
 
-## Complemento para o Progress on the Path
+## Mapa: locais "?" e missões quebradas
+
+Para locais que um mod quebrou: o autoloot pegou o item que uma missão espera, uma parede não pode mais ser destruída, um "?" nunca some. Um local conta como concluído no jogo e no Progress on the Path quando seu marcador está descoberto e acinzentado; estes comandos definem exatamente esse estado. Funcionam no mapa em que você está (Velen e Novigrad são um mapa só).
 
 | Comando | O que faz |
 |---|---|
-| `pp()` | O que falta na região atual, por tipo |
-| `pp("contract", page)` | Lista por tipo: `main`, `side`, `contract`, `hunt`, `scavenger`, `event`, `gwent` |
+| `qfix()` | Corrigir os "?" bugados no mapa inteiro: locais que o jogo já conta como concluídos mas ainda mostra como "?". Locais não concluídos não são tocados |
+| `qdone(r)` | Fique em um local quebrado: marca como concluído tudo o que falta num raio de `r` metros (padrão 50) |
+| `qpins(r)` | Marcadores do mapa num raio de `r` metros (padrão 30) e seu estado |
+| `questdone()` | Concluir a missão secundária acompanhada no diário (missões principais são recusadas) |
+| `qdoneall()` | Contar os locais não concluídos deste mapa. `qdoneall("", 1)` marca TODOS como concluídos, estejam ou não. Salve antes |
+| `qreveal()` | Mostrar no mapa todos os locais "?" ocultos da região (continuam não descobertos até você visitá-los) |
 
 ## Licença
 

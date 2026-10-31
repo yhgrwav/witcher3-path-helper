@@ -10,6 +10,7 @@ exec function qreveal()
 
 	manager = theGame.GetCommonMapManager();
 	tags = manager.GetKnownableEntityNames();
+	ArrayOfNamesAppendUnique( tags, manager.GetDiscoverableEntityNames() );
 
 	for ( i = 0; i < tags.Size(); i += 1 )
 	{

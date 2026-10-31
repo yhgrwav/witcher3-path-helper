@@ -275,7 +275,7 @@ timer function BT_TourTick( dt : float, id : int )
 	if ( bt_queue.Size() == 0 )
 	{
 		RemoveTimer( 'BT_TourTick' );
-		theGame.GetGuiManager().ShowNotification( "Auto tour done. Quests taken: " + bt_total + "<br>With Progress on the Path add-on: pp() shows what is left here" );
+		theGame.GetGuiManager().ShowNotification( "Auto tour done. Quests taken: " + bt_total );
 		return;
 	}
 
